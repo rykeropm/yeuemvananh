@@ -59,16 +59,23 @@ function triggerRelease(e) {
 }
 
 function activateMusic() {
-  musicPlayer.classList.add("active");
-  audioPlayer
-    .play()
-    .then(() => {
-      isPlaying = true;
-      showPauseIcon();
-    })
-    .catch((e) => {
-      console.log("Error al reproducir audio:", e);
-    });
+
+musicPlayer.classList.add("active");
+
+audioPlayer.currentTime = 0;
+
+audioPlayer.play().then(() => {
+
+isPlaying = true;
+
+showPauseIcon();
+
+}).catch(() => {
+
+console.log("Mobile cần click thêm để phát nhạc");
+
+});
+
 }
 
 function showPlayIcon() {
@@ -316,8 +323,5 @@ document.addEventListener("click", function showRandom() {
 
   document.removeEventListener("click", showRandom);
 });
-function playMusic(){
-document.getElementById("music").play();
-}
 
 
