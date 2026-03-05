@@ -316,5 +316,8 @@ document.addEventListener("click", function showRandom() {
 
   document.removeEventListener("click", showRandom);
 });
+function playMusic(){
+document.getElementById("music").play();
+}
 
 
