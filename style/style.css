@@ -598,7 +598,7 @@ body {
 .p14 { top: 29%; right: 20%; animation-delay: 1s; }
 .p15 { bottom: 10%; left: 35%; animation-delay: 1s; }
 .p16 { top: 12%; right: 28%; animation-delay: 1s; }
-.p17 { bottom: 8%; left: 12%; animation-delay: 1.8; }
+.p17 { bottom: 8%; left: 12%; animation-delay: 1.8s; }
 .p18 { top: 35%; right: 5%; animation-delay: 0.7s; }
 
 /* Hiệu ứng bay */
@@ -673,30 +673,59 @@ body {
 .photo.right{
     transform: translate(250px,50px) rotate(10deg);
 }
+/* ===== MOBILE OPTIMIZATION ===== */
 
-@media (max-width:768px){
-.element{
-top:20%;
-left:10%;
-}
-}
+@media (max-width: 768px){
 
-body{
-    padding:10px;
+/* thu nhỏ toàn bộ scene để giữ layout */
+.scene{
+transform: scale(0.88);
 }
 
-img{
-    width:90%;
-    height:auto;
+/* ảnh tự co theo màn hình */
+.photo{
+width: clamp(55px, 12vw, 90px);
 }
 
-.text{
-    font-size:18px;
+/* tim ở giữa nhỏ lại chút */
+.heart-btn{
+width: clamp(220px, 38vmin, 420px);
+height: clamp(220px, 38vmin, 420px);
 }
 
-button{
-    font-size:16px;
-    padding:10px 15px;
+/* music player gọn hơn */
+.music-player{
+min-width: 210px;
+bottom: 8px;
+padding: 8px 14px;
+}
+
+/* chữ nhỏ lại */
+.song-info{
+font-size: 11px;
+}
+
+.time-display{
+font-size: 10px;
+}
+
+}
+
+/* màn hình rất nhỏ (iphone mini, android nhỏ) */
+
+@media (max-width: 420px){
+
+.scene{
+transform: scale(0.8);
+}
+
+.photo{
+width: clamp(50px, 14vw, 80px);
+}
+
+.heart-btn{
+width: 200px;
+height: 200px;
 }
 
 }
