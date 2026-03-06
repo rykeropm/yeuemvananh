@@ -677,10 +677,6 @@ body {
 
 @media (max-width: 768px){
 
-/* thu nhỏ toàn bộ scene để giữ layout */
-.scene{
-transform: scale(0.88);
-}
 
 /* ảnh tự co theo màn hình */
 .photo{
@@ -714,10 +710,6 @@ font-size: 10px;
 /* màn hình rất nhỏ (iphone mini, android nhỏ) */
 
 @media (max-width: 420px){
-
-.scene{
-transform: scale(0.8);
-}
 
 .photo{
 width: clamp(50px, 14vw, 80px);
