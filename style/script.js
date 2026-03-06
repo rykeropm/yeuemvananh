@@ -322,6 +322,11 @@ document.addEventListener("click", function showRandom() {
   });
 
   document.removeEventListener("click", showRandom);
+  const audio = document.getElementById("audioPlayer");
+const heart = document.getElementById("heartBtn");
+
+heart.addEventListener("click", function () {
+    audio.muted = false;
+    audio.play().catch(() => {});
 });
-
-
+  });
