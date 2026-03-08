@@ -125,22 +125,28 @@ function showPhotos() {
       </div>
     </div>
   </div>
-
   <audio id="audioPlayer" loop>
     <source src="style/nhac.mp3" type="audio/mpeg" />
   </audio>
 
-  <script src="style/script.js"></<script>
-document.addEventListener("touchstart", function () {
-  var audio = document.querySelector("audio");
-  if (audio) {
-    audio.play();
-  }
-}, { once: true });
-</script>
+  <script src="style/script.js"></script>
+  <script>
+    document.addEventListener("touchstart", function () {
+      var audio = document.querySelector("audio");
+      if (audio) {
+        audio.play().catch(function(error) {
+          console.log("Audio autoplay prevented:", error);
+        });
+      }
+    }, { once: true });
+  </script>
+</body>
+
+</html>
 </body>
 
 
 </html>
+
 
 
